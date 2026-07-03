@@ -1,6 +1,6 @@
 # MIPS-Lite Functional & Pipeline Simulator
 
-A C++ simulator for a reduced MIPS instruction set ("MIPS-Lite"), built for ECE 486/586 (Computer Architecture). The simulator supports three modes: a functional (instruction-level) simulator, a 5-stage pipeline simulator without forwarding, and a 5-stage pipeline simulator with forwarding — all driven from the same instruction trace.
+A C++ simulator for a reduced MIPS instruction set ("MIPS-Lite"), built for ECE 486/586 (Computer Architecture). The simulator supports three modes: a functional (instruction-level) simulator, a 5-stage pipeline simulator without forwarding, and a 5-stage pipeline simulator with forwarding - all driven from the same instruction trace.
 
 Developed as a 4-person team project by Nikhil Swarna, Venkat Sai Sumanth Koyada, Venkata Sriram Kamarajugadda, and Hanisha Produtur.
 
@@ -25,7 +25,6 @@ I implemented the **no-forwarding pipeline model** (Part B), corresponding to th
 | Venkata Sriram Kamarajugadda | Functional simulator | `FunctionalSim` class — instruction execution, register/memory state, PC and branch update logic, top-level driver |
 | Hanisha Produtur | Forwarding pipeline | RAW hazard stall logic for the forwarding model (`PipelineSim::run()`, `forwarding_ == true` path) — EX→EX/MEM→EX forwarding and load-use hazard handling |
 
-Full role breakdown is documented in [`docs/Roles_and_Responsibilities.pdf`](./docs/Roles_and_Responsibilities.pdf).
 
 ## Project Structure
 ```
