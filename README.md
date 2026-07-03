@@ -7,9 +7,9 @@ Developed as a 4-person team project by Nikhil Swarna, Venkat Sai Sumanth Koyada
 ## Overview
 The simulator loads a memory image (a hex-encoded instruction trace), decodes each 32-bit instruction across 18 supported opcodes (arithmetic, logical, memory, and control categories), and executes it against a simulated register file and memory. Three modes are available:
 
-- **Mode 0 (Part A):** Functional simulator only — executes instructions and reports final register/memory state.
-- **Mode 1 (Part B):** Functional simulator + 5-stage pipeline timing **without** forwarding — models RAW hazard stalls purely by instruction issue-cycle distance.
-- **Mode 2 (Part C):** Functional simulator + 5-stage pipeline timing **with** forwarding — models EX→EX and MEM→EX forwarding, leaving only the load-use hazard as a stall source.
+- **Mode 0 (Part A):** Functional simulator only - executes instructions and reports final register/memory state.
+- **Mode 1 (Part B):** Functional simulator + 5-stage pipeline timing **without** forwarding - models RAW hazard stalls purely by instruction issue-cycle distance.
+- **Mode 2 (Part C):** Functional simulator + 5-stage pipeline timing **with** forwarding - models EX→EX and MEM→EX forwarding, leaving only the load-use hazard as a stall source.
 
 All three modes share the same functional execution semantics; only the pipeline timing model changes.
 
@@ -22,7 +22,7 @@ I implemented the **no-forwarding pipeline model** (Part B), corresponding to th
 |---|---|---|
 | Nikhil Swarna | Trace reading, types, decoding, statistics | Memory image parsing, instruction decode (`decode()`, `isRType()`, `categoryOf()`), shared types/constants, instruction category statistics |
 | **Venkat Sai Sumanth Koyada** | No-forwarding pipeline | RAW hazard stall logic for the no-forwarding model (`PipelineSim::run()`, `forwarding_ == false` path) |
-| Venkata Sriram Kamarajugadda | Functional simulator | `FunctionalSim` class — instruction execution, register/memory state, PC and branch update logic, top-level driver |
+| Venkata Sriram Kamarajugadda | Functional simulator | `FunctionalSim` class - instruction execution, register/memory state, PC and branch update logic, top-level driver |
 | Hanisha Produtur | Forwarding pipeline | RAW hazard stall logic for the forwarding model (`PipelineSim::run()`, `forwarding_ == true` path) — EX→EX/MEM→EX forwarding and load-use hazard handling |
 
 
